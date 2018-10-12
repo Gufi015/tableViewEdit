@@ -13,7 +13,9 @@ var testData = [{
 }, {
 	title : 'fresas'
 }, {
-	tile : 'Naranjas'
+	title : 'Naranjas'
+},{
+    title: 'Mangos'
 }];
 
 var table = Ti.UI.createTableView({
@@ -28,7 +30,7 @@ table.addEventListener('dranged', function() {
 	table.setData(testData);
 });
 
-table.addEventListener('delete', function(e) {
+table.addEventListener('deleted', function(e) {
 	var rowIndex = e.index;
 	var rowBkup = e.row;
 	log(testData[rowIndex].title);
@@ -67,7 +69,7 @@ var logView = Ti.UI.createLabel({
 function log(text) {
 	logView.setText(text);
 }
-
+/*
 var button = Ti.UI.createButton({
 	backgroundColor : 'white',
 	title : 'buton',
@@ -83,10 +85,10 @@ button.addEventListener('click', function(e) {
     });
     dialogo.show();
 });
-
+window.add(button);
+*/
 
 
 window.add(table);
 window.add(logView);
-window.add(button);
 window.open();

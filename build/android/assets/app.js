@@ -13,7 +13,9 @@ title:'Peras'},
 {
 title:'fresas'},
 {
-tile:'Naranjas'}],
+title:'Naranjas'},
+{
+title:'Mangos'}],
 
 
 table=Ti.UI.createTableView({
@@ -28,7 +30,7 @@ log('reset table '),
 table.setData(testData);
 }),
 
-table.addEventListener('delete',function(e){
+table.addEventListener('click',function(e){
 var rowIndex=e.index,
 rowBkup=e.row;
 log(testData[rowIndex].title);
@@ -57,7 +59,6 @@ Ti.API.info('no mere'));
 dialog.show();
 });
 
-
 });
 
 var logView=Ti.UI.createLabel({
@@ -69,26 +70,25 @@ function log(text){
 logView.setText(text);
 }
 
-var button=Ti.UI.createButton({
-backgroundColor:'white',
-title:'buton',
-top:80,
-color:'red'});
 
-button.addEventListener('click',function(e){
-alert('Presionaste buton');
-var dialogo=Ti.UI.createAlertDialog({
-cancel:1,
-buttonNames:['Confirm','Cancel'],
-message:'confirm deleted?',
-title:'Delete'});
 
-dialogo.show();
-}),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 window.add(table),
 window.add(logView),
-window.add(button),
 window.open();
